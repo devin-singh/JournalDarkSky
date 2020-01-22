@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		658C1DD923D8C4840079B175 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C1DD823D8C4840079B175 /* Weather.swift */; };
 		658C1DDB23D8C92A0079B175 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C1DDA23D8C92A0079B175 /* WeatherService.swift */; };
+		658C1DDD23D8D9530079B175 /* Authorization.plist in Resources */ = {isa = PBXBuildFile; fileRef = 658C1DDC23D8D9530079B175 /* Authorization.plist */; };
 		7E5BCCF723D89CEC00467147 /* JSONRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5BCCF623D89CEC00467147 /* JSONRepository.swift */; };
 		7E5BCCF923D89D0400467147 /* EntryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5BCCF823D89D0400467147 /* EntryStorage.swift */; };
 		7E5C547323D5725500F6AFD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E5C547223D5725500F6AFD9 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		658C1DD823D8C4840079B175 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		658C1DDA23D8C92A0079B175 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherService.swift; path = JournalDarkSky/Models/WeatherService.swift; sourceTree = SOURCE_ROOT; };
+		658C1DDC23D8D9530079B175 /* Authorization.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Authorization.plist; sourceTree = "<group>"; };
 		7E5BCCF623D89CEC00467147 /* JSONRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRepository.swift; sourceTree = "<group>"; };
 		7E5BCCF823D89D0400467147 /* EntryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryStorage.swift; sourceTree = "<group>"; };
 		7E5C547223D5725500F6AFD9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				7E6B825823D227BA00FBBE58 /* Assets.xcassets */,
 				7E6B825A23D227BA00FBBE58 /* LaunchScreen.storyboard */,
 				7E6B825D23D227BA00FBBE58 /* Info.plist */,
+				658C1DDC23D8D9530079B175 /* Authorization.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			files = (
 				7E6B825C23D227BA00FBBE58 /* LaunchScreen.storyboard in Resources */,
 				7E6B825923D227BA00FBBE58 /* Assets.xcassets in Resources */,
+				658C1DDD23D8D9530079B175 /* Authorization.plist in Resources */,
 				7E5C547323D5725500F6AFD9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

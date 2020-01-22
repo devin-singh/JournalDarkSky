@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 
+/// Controlls all Entries the user sees
 class EntryViewController: UIViewController {
     
     // MARK: - Outlets
@@ -34,6 +35,7 @@ class EntryViewController: UIViewController {
     
     // MARK: - Private Methods
     
+    /// Fetches the weather and displays it at the top of the tableview.
     private func fetchWeather() {
         // Request permission to get the users location
         locationManager.requestWhenInUseAuthorization()
@@ -44,33 +46,38 @@ class EntryViewController: UIViewController {
             WeatherService.fetchWeather(latitude: coordinate.latitude, longitude: coordinate.longitude) { (result) in
                 DispatchQueue.main.async {
                     switch result {
+                    // Display Weather to user
                     case .success(let weather):
                         self.summaryLabel.text = weather.summary
                         self.temperatureLabel.text = String(weather.temperature)
+                    // Display error to user
                     case .failure(let error):
                         self.presentErrorToUser(localizedError: error)
                     }
                 }
             }
         }
-        
-        
     }
-    
+    /// Fetches a quote from the QuoteAPI via QuoteService
     private func fetchQuote() {
+        // Asks QuoteService to fetch a quote
         QuoteService.fetchQuote { (result) in
+            // Switches application to the main thread
             DispatchQueue.main.async {
-                
+                // Switching on result to check for success or failure.
                 switch result {
                 case .success(let quote):
+                    // If success the quoteLabel will be updated wih the quoteText and quoteAuthor property
                     self.quoteLabel.text = quote.quoteText + "\n-" + quote.quoteAuthor
                 case .failure(let error):
+                    // Displays error to the user
                     self.presentErrorToUser(localizedError: error)
                 }
             }
         }
     }
     
+    /// Presents an alert to user to create a new entry
     private func presentNewEntryAlert() {
         let alert = UIAlertController(title: "Entry", message: nil, preferredStyle: .alert)
         alert.addTextField()

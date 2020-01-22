@@ -10,10 +10,15 @@ import Foundation
 
 class WeatherService {
     
+    // MARK: - Properties
+    
     static private let baseURL = URL(string: "https://api.darksky.net")
     static private let forecastComponent = "forecast"
-    static private let apiKeyComponent = "3a084a60524149b1aa411598c98b6555"
+    static private let apiKeyComponent = retrieveAPIKey()
     
+    // MARK: - Methods
+    
+    /// Fetchest the current weather using a given Latitude and Longitude.
     static func fetchWeather(latitude: Double, longitude: Double, completion: @escaping (Result<Weather, NetworkError>) -> Void) {
         // Build URL
         guard let baseURL = baseURL else { return completion(.failure(.invalidURL))}
@@ -36,4 +41,15 @@ class WeatherService {
             }
         }
     }
+    
+    // MARK: - Private Methods
+    
+    // API Key
+    
+   private static func retrieveAPIKey() -> String {
+       guard let filepath = Bundle.main.path(forResource: "Authorization", ofType: "plist") else { print("APIKey.plist not found."); return "error" }
+       let propertyList = NSDictionary.init(contentsOfFile: filepath)
+       guard let apiKey = propertyList?.value(forKey: "DarkSkyAPIKey") as? String else { print("Improper drilling into PropertyList file."); return "" }
+       return apiKey
+   }
 }
