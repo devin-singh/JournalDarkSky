@@ -12,6 +12,14 @@ class URLSessionManager {
     
     static func fetchData(for url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void) {
         
-        // TODO: Fetch Data from URL
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                return completion(.failure(.thrownError(error)))
+            }
+            guard let data = data else { return completion(.failure(.noDataFound)) }
+            
+            completion(.success(data))
+            
+        }.resume()
     }
 }

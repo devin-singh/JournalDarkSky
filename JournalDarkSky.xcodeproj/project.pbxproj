@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		658C1DD923D8C4840079B175 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C1DD823D8C4840079B175 /* Weather.swift */; };
+		658C1DDB23D8C92A0079B175 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C1DDA23D8C92A0079B175 /* WeatherService.swift */; };
 		7E5BCCF723D89CEC00467147 /* JSONRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5BCCF623D89CEC00467147 /* JSONRepository.swift */; };
 		7E5BCCF923D89D0400467147 /* EntryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5BCCF823D89D0400467147 /* EntryStorage.swift */; };
 		7E5C547323D5725500F6AFD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E5C547223D5725500F6AFD9 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		658C1DD823D8C4840079B175 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		658C1DDA23D8C92A0079B175 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherService.swift; path = JournalDarkSky/Models/WeatherService.swift; sourceTree = SOURCE_ROOT; };
 		7E5BCCF623D89CEC00467147 /* JSONRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRepository.swift; sourceTree = "<group>"; };
 		7E5BCCF823D89D0400467147 /* EntryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryStorage.swift; sourceTree = "<group>"; };
 		7E5C547223D5725500F6AFD9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 			children = (
 				7E60B21423D80C4400A0395F /* Quote.swift */,
 				7E60B21823D80C6700A0395F /* Entry.swift */,
+				658C1DD823D8C4840079B175 /* Weather.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 		7E5C700823D63605001EE6F1 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				658C1DDA23D8C92A0079B175 /* WeatherService.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -245,8 +251,10 @@
 				7E5C548123D5F3D900F6AFD9 /* UIViewControllerExtension.swift in Sources */,
 				7E60B21D23D80C8E00A0395F /* QuoteService.swift in Sources */,
 				7E5C548623D5F41200F6AFD9 /* NetworkError.swift in Sources */,
+				658C1DDB23D8C92A0079B175 /* WeatherService.swift in Sources */,
 				7E5C547723D5F30100F6AFD9 /* EntryViewController.swift in Sources */,
 				7E5BCCF723D89CEC00467147 /* JSONRepository.swift in Sources */,
+				658C1DD923D8C4840079B175 /* Weather.swift in Sources */,
 				7E6B825023D227B700FBBE58 /* AppDelegate.swift in Sources */,
 				7E5BCCF923D89D0400467147 /* EntryStorage.swift in Sources */,
 				7E6B825223D227B700FBBE58 /* SceneDelegate.swift in Sources */,

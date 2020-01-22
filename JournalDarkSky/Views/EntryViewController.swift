@@ -29,9 +29,33 @@ class EntryViewController: UIViewController {
         entryTableView.delegate = self
         entryTableView.dataSource = self
         fetchQuote()
+        fetchWeather()
     }
     
     // MARK: - Private Methods
+    
+    private func fetchWeather() {
+        // Request permission to get the users location
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            guard let coordinate = locationManager.location?.coordinate else { return }
+            
+            WeatherService.fetchWeather(latitude: coordinate.latitude, longitude: coordinate.longitude) { (result) in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let weather):
+                        self.summaryLabel.text = weather.summary
+                        self.temperatureLabel.text = String(weather.temperature)
+                    case .failure(let error):
+                        self.presentErrorToUser(localizedError: error)
+                    }
+                }
+            }
+        }
+        
+        
+    }
     
     private func fetchQuote() {
         QuoteService.fetchQuote { (result) in
